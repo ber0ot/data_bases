@@ -1,0 +1,93 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36" version="29.5.1">
+  <diagram name="PC Parts Store 3NF" id="pcparts-3nf">
+    <mxGraphModel dx="1395" dy="794" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="t2" parent="1" style="shape=mxgraph.mockup.containers.list;whiteSpace=wrap;html=1;align=left;spacingLeft=10;spacingTop=8;fontSize=12;rounded=0;" value="&lt;font style=&quot;&quot;&gt;&lt;font style=&quot;font-size: 18px;&quot;&gt;seller_company&lt;br&gt;&lt;/font&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;• PK company_id&lt;/span&gt;&lt;br&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;• name&lt;/span&gt;&lt;br&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;• inn&lt;/span&gt;&lt;br&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;• phone&lt;/span&gt;&lt;br&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;• email&lt;/span&gt;&lt;/font&gt;" vertex="1">
+          <mxGeometry height="170" width="320" x="40" y="50" as="geometry" />
+        </mxCell>
+        <mxCell id="t3" parent="1" style="shape=mxgraph.mockup.containers.list;whiteSpace=wrap;html=1;align=left;spacingLeft=10;spacingTop=8;fontSize=12;rounded=0;" value="&lt;font style=&quot;&quot;&gt;&lt;font style=&quot;font-size: 18px;&quot;&gt;store&lt;br&gt;&lt;/font&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;• PK store_id&lt;/span&gt;&lt;br&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;• FK company_id → seller_company.company_id&lt;/span&gt;&lt;br&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;• address&lt;/span&gt;&lt;br&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;• city&lt;/span&gt;&lt;/font&gt;" vertex="1">
+          <mxGeometry height="150" width="320" x="510" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="t4" parent="1" style="shape=mxgraph.mockup.containers.list;whiteSpace=wrap;html=1;align=left;spacingLeft=10;spacingTop=8;fontSize=12;rounded=0;" value="&lt;font style=&quot;&quot;&gt;&lt;font style=&quot;font-size: 18px;&quot;&gt;country&lt;br&gt;&lt;/font&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;• PK country_id&lt;/span&gt;&lt;br&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;• name (Unique)&lt;/span&gt;&lt;/font&gt;" vertex="1">
+          <mxGeometry height="130" width="320" x="60" y="280" as="geometry" />
+        </mxCell>
+        <mxCell id="t5" parent="1" style="shape=mxgraph.mockup.containers.list;whiteSpace=wrap;html=1;align=left;spacingLeft=10;spacingTop=8;fontSize=12;rounded=0;" value="&lt;font style=&quot;&quot;&gt;&lt;font style=&quot;font-size: 18px;&quot;&gt;manufacturer&lt;br&gt;&lt;/font&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;• PK manufacturer_id&lt;/span&gt;&lt;br&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;• name (Unique)&lt;/span&gt;&lt;br&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;• FK country_id → country.country_id&lt;/span&gt;&lt;/font&gt;" vertex="1">
+          <mxGeometry height="150" width="320" x="500" y="270" as="geometry" />
+        </mxCell>
+        <mxCell id="t6" parent="1" style="shape=mxgraph.mockup.containers.list;whiteSpace=wrap;html=1;align=left;spacingLeft=10;spacingTop=8;fontSize=12;rounded=0;" value="&lt;font style=&quot;&quot;&gt;&lt;font style=&quot;font-size: 18px;&quot;&gt;category&lt;br&gt;&lt;/font&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;• PK category_id&lt;/span&gt;&lt;br&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;• name (Unique)&lt;/span&gt;&lt;br&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;• FK parent_category_id → category.category_id (nullable)&lt;/span&gt;&lt;/font&gt;" vertex="1">
+          <mxGeometry height="150" width="320" x="30" y="575" as="geometry" />
+        </mxCell>
+        <mxCell id="t7" parent="1" style="shape=mxgraph.mockup.containers.list;whiteSpace=wrap;html=1;align=left;spacingLeft=10;spacingTop=8;fontSize=12;rounded=0;" value="&lt;font style=&quot;&quot;&gt;&lt;font style=&quot;font-size: 18px;&quot;&gt;product&lt;br&gt;&lt;/font&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;• PK product_id&lt;/span&gt;&lt;br&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;• article_number (Unique)&lt;/span&gt;&lt;br&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;• name&lt;/span&gt;&lt;br&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;• description&lt;/span&gt;&lt;br&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;• warranty_months&lt;/span&gt;&lt;br&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;• FK category_id → category.category_id&lt;/span&gt;&lt;br&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;• FK manufacturer_id → manufacturer.manufacturer_id&lt;/span&gt;&lt;/font&gt;" vertex="1">
+          <mxGeometry height="220" width="360" x="520" y="540" as="geometry" />
+        </mxCell>
+        <mxCell id="t8" parent="1" style="shape=mxgraph.mockup.containers.list;whiteSpace=wrap;html=1;align=left;spacingLeft=10;spacingTop=8;fontSize=12;rounded=0;" value="&lt;font style=&quot;&quot;&gt;&lt;font style=&quot;font-size: 18px;&quot;&gt;spec&lt;/font&gt;&lt;br&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;• PK spec_id&lt;/span&gt;&lt;br&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;• name (Unique)&lt;/span&gt;&lt;br&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;• unit&lt;/span&gt;&lt;/font&gt;" vertex="1">
+          <mxGeometry height="150" width="320" x="40" y="910" as="geometry" />
+        </mxCell>
+        <mxCell id="t9" parent="1" style="shape=mxgraph.mockup.containers.list;whiteSpace=wrap;html=1;align=left;spacingLeft=10;spacingTop=8;fontSize=12;rounded=0;" value="&lt;font style=&quot;&quot;&gt;&lt;font style=&quot;font-size: 18px;&quot;&gt;product_spec&lt;br&gt;&lt;/font&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;• PK/FK product_id → product.product_id&lt;/span&gt;&lt;br&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;• PK/FK spec_id → spec.spec_id&lt;/span&gt;&lt;br&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;• value&lt;/span&gt;&lt;/font&gt;" vertex="1">
+          <mxGeometry height="150" width="360" x="550" y="910" as="geometry" />
+        </mxCell>
+        <mxCell id="t10" parent="1" style="shape=mxgraph.mockup.containers.list;whiteSpace=wrap;html=1;align=left;spacingLeft=10;spacingTop=8;fontSize=12;rounded=0;" value="&lt;font style=&quot;&quot;&gt;&lt;font style=&quot;font-size: 18px;&quot;&gt;price&lt;br&gt;&lt;/font&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;• PK price_id&lt;/span&gt;&lt;br&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;• FK product_id → product.product_id&lt;/span&gt;&lt;br&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;• FK store_id → store.store_id&lt;/span&gt;&lt;br&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;• price_amount&lt;/span&gt;&lt;br&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;• valid_from&lt;/span&gt;&lt;/font&gt;" vertex="1">
+          <mxGeometry height="170" width="320" x="1250" y="810" as="geometry" />
+        </mxCell>
+        <mxCell id="t11" parent="1" style="shape=mxgraph.mockup.containers.list;whiteSpace=wrap;html=1;align=left;spacingLeft=10;spacingTop=8;fontSize=12;rounded=0;" value="&lt;font style=&quot;&quot;&gt;&lt;font style=&quot;font-size: 18px;&quot;&gt;inventory&lt;br&gt;&lt;/font&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;• PK/FK store_id → store.store_id&lt;/span&gt;&lt;br&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;• PK/FK product_id → product.product_id&lt;/span&gt;&lt;br&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;• quantity&lt;/span&gt;&lt;/font&gt;" vertex="1">
+          <mxGeometry height="140" width="360" x="610" y="1120" as="geometry" />
+        </mxCell>
+        <mxCell id="t12" parent="1" style="shape=mxgraph.mockup.containers.list;whiteSpace=wrap;html=1;align=left;spacingLeft=10;spacingTop=8;fontSize=12;rounded=0;" value="&lt;font style=&quot;&quot;&gt;&lt;font style=&quot;font-size: 18px;&quot;&gt;customer&lt;br&gt;&lt;/font&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;• PK customer_id&lt;/span&gt;&lt;br&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;• full_name&lt;/span&gt;&lt;br&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;• phone&lt;/span&gt;&lt;br&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;• email&lt;/span&gt;&lt;/font&gt;" vertex="1">
+          <mxGeometry height="150" width="320" x="1610" y="65" as="geometry" />
+        </mxCell>
+        <mxCell id="t13" parent="1" style="shape=mxgraph.mockup.containers.list;whiteSpace=wrap;html=1;align=left;spacingLeft=10;spacingTop=8;fontSize=12;rounded=0;" value="&lt;font style=&quot;&quot;&gt;&lt;font style=&quot;font-size: 18px;&quot;&gt;order&lt;br&gt;&lt;/font&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;• PK order_id&lt;/span&gt;&lt;br&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;• FK customer_id → customer.customer_id&lt;/span&gt;&lt;br&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;• FK store_id → store.store_id&lt;/span&gt;&lt;br&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;• order_date&lt;/span&gt;&lt;br&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;• status&lt;/span&gt;&lt;/font&gt;" vertex="1">
+          <mxGeometry height="160" width="320" x="1150" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="t14" parent="1" style="shape=mxgraph.mockup.containers.list;whiteSpace=wrap;html=1;align=left;spacingLeft=10;spacingTop=8;fontSize=12;rounded=0;" value="&lt;font style=&quot;&quot;&gt;&lt;font style=&quot;font-size: 18px;&quot;&gt;order_item&lt;br&gt;&lt;/font&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;• PK/FK order_id → order.order_id&lt;/span&gt;&lt;br&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;• PK/FK product_id → product.product_id&lt;/span&gt;&lt;br&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;• quantity&lt;/span&gt;&lt;br&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;• price_at_purchase&lt;/span&gt;&lt;/font&gt;" vertex="1">
+          <mxGeometry height="160" width="320" x="1150" y="290" as="geometry" />
+        </mxCell>
+        <mxCell id="e100" edge="1" parent="1" source="t2" style="edgeStyle=entityRelationEdgeStyle;rounded=0;html=1;startArrow=ERone;endArrow=ERmany;startFill=1;endFill=1;fontSize=11;" target="t3" value="">
+          <mxGeometry relative="1" x="-0.0667" y="-45" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e101" edge="1" parent="1" source="t4" style="edgeStyle=entityRelationEdgeStyle;rounded=0;html=1;startArrow=ERone;endArrow=ERmany;startFill=1;endFill=1;fontSize=11;" target="t5" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e103" edge="1" parent="1" source="t6" style="edgeStyle=entityRelationEdgeStyle;rounded=0;html=1;startArrow=ERone;endArrow=ERmany;startFill=1;endFill=1;fontSize=11;" target="t7" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e104" edge="1" parent="1" source="t5" style="edgeStyle=entityRelationEdgeStyle;rounded=0;html=1;startArrow=ERone;endArrow=ERmany;startFill=1;endFill=1;fontSize=11;" target="t7" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e105" edge="1" parent="1" source="t7" style="edgeStyle=entityRelationEdgeStyle;rounded=0;html=1;startArrow=ERone;endArrow=ERmany;startFill=1;endFill=1;fontSize=11;" target="t9" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e106" edge="1" parent="1" source="t8" style="edgeStyle=entityRelationEdgeStyle;rounded=0;html=1;startArrow=ERone;endArrow=ERmany;startFill=1;endFill=1;fontSize=11;" target="t9" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e107" edge="1" parent="1" source="t3" style="edgeStyle=entityRelationEdgeStyle;rounded=0;html=1;startArrow=ERone;endArrow=ERmany;startFill=1;endFill=1;fontSize=11;" target="t11" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e108" edge="1" parent="1" source="t7" style="edgeStyle=entityRelationEdgeStyle;rounded=0;html=1;startArrow=ERone;endArrow=ERmany;startFill=1;endFill=1;fontSize=11;" target="t11" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e109" edge="1" parent="1" source="t3" style="edgeStyle=entityRelationEdgeStyle;rounded=0;html=1;startArrow=ERone;endArrow=ERmany;startFill=1;endFill=1;fontSize=11;" target="t10" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e110" edge="1" parent="1" source="t7" style="edgeStyle=entityRelationEdgeStyle;rounded=0;html=1;startArrow=ERone;endArrow=ERmany;startFill=1;endFill=1;fontSize=11;" target="t10" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e111" edge="1" parent="1" source="t12" style="edgeStyle=entityRelationEdgeStyle;rounded=0;html=1;startArrow=ERone;endArrow=ERmany;startFill=1;endFill=1;fontSize=11;" target="t13" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e112" edge="1" parent="1" source="t3" style="edgeStyle=entityRelationEdgeStyle;rounded=0;html=1;startArrow=ERone;endArrow=ERmany;startFill=1;endFill=1;fontSize=11;" target="t13" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e113" edge="1" parent="1" source="t13" style="edgeStyle=entityRelationEdgeStyle;rounded=0;html=1;startArrow=ERone;endArrow=ERmany;startFill=1;endFill=1;fontSize=11;" target="t14" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e114" edge="1" parent="1" source="t7" style="edgeStyle=entityRelationEdgeStyle;rounded=0;html=1;startArrow=ERone;endArrow=ERmany;startFill=1;endFill=1;fontSize=11;" target="t14" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
